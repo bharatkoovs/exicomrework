@@ -156,12 +156,13 @@
                             </div>
                             <div class="label_input_container label_image_cont">
                                 <label class="label_text">Photo 1</label>
-                                <input name="image1" type="file" class="img_upload img_upload1"  <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                <input name="image1" type="file" data-count="1" class="img_upload img_upload1"  <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                <output id="list1"></output>
                                 <input type="hidden" id="existing_image1" name="existing_image1" value="<?=$battery_saved_data->photo_1?>">
                                 <div class="image2_cont image_cont">
                                     <?php if(!empty($battery_saved_data->photo_1)){ ?>
-                                        <img class="current_img1" src="<?=base_url().$battery_saved_data->photo_1?>" width="50"/>
-                                        <span class="remove_img" data-img="1">Remove</span>
+                                        <img class="current_img1 thumb" src="<?=base_url().$battery_saved_data->photo_1?>"/>
+                                        <span class="remove_img remove_img1" data-img="1">Remove</span>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -191,12 +192,13 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 2</label>
-                                    <input name="image2" type="file" class="img_upload" <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <input name="image2" type="file" data-count="2" class="img_upload img_upload2" <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <output id="list2"></output>
                                     <input type="hidden" id="existing_image2" name="existing_image2" value="<?=$battery_saved_data->photo_2?>">
                                     <div class="image2_cont image_cont">
                                     <?php if(!empty($battery_saved_data->photo_2)){?>
-                                        <img class="current_img2" src="<?=base_url().$battery_saved_data->photo_2?>" width="50"/>
-                                        <span class="remove_img" data-img="2">Remove</span>
+                                        <img class="current_img2 thumb" src="<?=base_url().$battery_saved_data->photo_2?>"/>
+                                        <span class="remove_img remove_img2" data-img="2">Remove</span>
                                     <?php }?>
                                     </div>
                                 </div>
@@ -227,12 +229,13 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 3</label>
-                                    <input name="image3" type="file" class="img_upload"  <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <input name="image3" type="file" data-count="3" class="img_upload img_upload3"  <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <output id="list3"></output>
                                     <input type="hidden" id="existing_image3" name="existing_image3" value="<?=$battery_saved_data->photo_3?>">
                                     <div class="image3_cont image_cont">
                                     <?php if(!empty($battery_saved_data->photo_3)){?>
-                                        <img class="current_img3" src="<?=base_url().$battery_saved_data->photo_3?>" width="50"/>
-                                        <span class="remove_img" data-img="3">Remove</span>
+                                        <img class="current_img3 thumb" src="<?=base_url().$battery_saved_data->photo_3?>"/>
+                                        <span class="remove_img remove_img3" data-img="3">Remove</span>
                                     <?php }?>
                                     </div>
                                 </div>
@@ -263,12 +266,13 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 4</label>
-                                    <input name="image4" type="file" class="img_upload" <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <input name="image4" type="file" data-count="4" class="img_upload img_upload4" <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <output id="list4"></output>
                                     <input type="hidden" id="existing_image4" name="existing_image4" value="<?=$battery_saved_data->photo_4?>">
                                     <div class="image4_cont image_cont">
                                     <?php if(!empty($battery_saved_data->photo_4)){?>
-                                        <img class="current_img4" src="<?=base_url().$battery_saved_data->photo_4?>" width="50"/>
-                                        <span class="remove_img" data-img="4">Remove</span>
+                                        <img class="current_img4 thumb" src="<?=base_url().$battery_saved_data->photo_4?>"/>
+                                        <span class="remove_img remove_img4" data-img="4">Remove</span>
                                     <?php }?>
                                     </div>
                                 </div>

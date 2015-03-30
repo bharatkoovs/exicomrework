@@ -398,4 +398,42 @@ $(document).ready(function(){
         $('#existing_image'+img).val('');
         $(this).hide();
     });
+    
+    $('.remove_curr').live('click', function(){
+        var img = $(this).data('no');
+        $('#list'+img).html('');
+        $('.img_upload'+img).val('');
+        $(this).hide();
+    });
+});
+
+$(document).ready(function(){   
+  var file_no;
+  $('.img_upload').on('change', function(evt){
+      file_no = $(this).data('count'); 
+      $('#list'+file_no).html(''); 
+      var files = evt.target.files;
+
+    for (var i = 0, f; f = files[i]; i++) {
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        return function(e) {
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list'+file_no).insertBefore(span, null);   
+          $('#list'+file_no).append('<span class="remove_curr remove_curr_img'+file_no+'" data-no="'+file_no+'">Remove</span>')
+          $('.current_img'+file_no).hide();
+          $('.remove_img'+file_no).hide();
+        };
+      })(f);
+      
+      reader.readAsDataURL(f);
+    }
+  });
+
 });
