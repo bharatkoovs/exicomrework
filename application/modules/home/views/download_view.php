@@ -10,7 +10,7 @@
                             $attributes = array('name' => 'download_form', 'id' => 'download_form');
                             echo form_open('home/download_report', $attributes);
                             ?>
-                            <input type="text" class="textBox" id="cbms_batteryInput" name="serial_number" placeholder="Enter cbms/battery serial no">
+                            <input type="text" class="textBox" id="cbms_battery_download" name="serial_number" placeholder="Enter cbms/battery serial no">
                             <div class="battery_proceedWrapper" id="download_proceed">
                                 <div class="battery_proceedButton">
                                     <p>DOWNLOAD</p>

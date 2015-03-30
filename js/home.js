@@ -338,6 +338,7 @@ $(document).ready(function(){
 
     $('#download_proceed').click(function(){
         $("#download_form").trigger('submit');
+        $('#cbms_battery_download').val('');
     });
      
 });
