@@ -54,6 +54,7 @@
 }
 .image_cont{text-align: center;}
 .label_height_cont{height: auto!important;}
+.label_image_cont{height: auto!important; margin-bottom: 20px;}
 .label_input_container img{padding-top: 10px;}
 .add_more_issues{text-align:center;font-size:13px;text-transform:uppercase;text-decoration:underline;color:#757575;cursor:pointer;margin: 30px 0;}
 .next{text-align:center;float:right!important;margin:0px;margin-bottom:30px;font-size:13px;text-transform:uppercase;text-decoration:underline;color:#757575;cursor:pointer;}

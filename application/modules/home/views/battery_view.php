@@ -154,7 +154,7 @@
                                 <label class="label_text">Remark 1</label>
                                 <textarea name="remarks_1" class="textBox req_field" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_1?></textarea>
                             </div>
-                            <div class="label_input_container label_height_cont">
+                            <div class="label_input_container label_image_cont">
                                 <label class="label_text">Photo 1</label>
                                 <input name="image1" type="file" class="img_upload img_upload1"  <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
                                 <input type="hidden" id="existing_image1" name="existing_image1" value="<?=$battery_saved_data->photo_1?>">
@@ -189,7 +189,7 @@
                                 <label class="label_text">Remark 2</label>
                                 <textarea name="remarks_2" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_2?></textarea>
                                 </div>
-                                <div class="label_input_container label_height_cont">
+                                <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 2</label>
                                     <input name="image2" type="file" class="img_upload" <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
                                     <input type="hidden" id="existing_image2" name="existing_image2" value="<?=$battery_saved_data->photo_2?>">
@@ -221,11 +221,11 @@
                                         <option value="13" <?=($battery_saved_data->issue_type_3 == 13) ? 'selected' : ''?>>Module Body Rusted</option>
                                     </select>
                                 </div>
-                                <div class="label_input_container label_height_cont">
+                                <div class="label_input_container label_image_cont">
                                 <label class="label_text">Remark 3</label>
                                 <textarea name="remarks_3" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_3?></textarea>
                                 </div>
-                                <div class="label_input_container label_height_cont">
+                                <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 3</label>
                                     <input name="image3" type="file" class="img_upload"  <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
                                     <input type="hidden" id="existing_image3" name="existing_image3" value="<?=$battery_saved_data->photo_3?>">
@@ -261,7 +261,7 @@
                                 <label class="label_text">Remark 4</label>
                                 <textarea name="remarks_4" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_4?></textarea>
                                 </div>
-                                <div class="label_input_container label_height_cont">
+                                <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 4</label>
                                     <input name="image4" type="file" class="img_upload" <?=($is_mobile) ? 'accept="image/*;capture=camera"' : '' ?>>
                                     <input type="hidden" id="existing_image4" name="existing_image4" value="<?=$battery_saved_data->photo_4?>">
