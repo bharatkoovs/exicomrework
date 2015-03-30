@@ -113,23 +113,23 @@
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Cell 1 Temp</label>
-                                <input name="cell_temp_1" type="text" class="textBox req_field" value="<?=$battery_saved_data->cell_temp_1?>" placeholder="XX.X">
+                                <input name="cell_temp_1" type="text" class="textBox temprature_data" value="<?=$battery_saved_data->cell_temp_1?>" placeholder="XX.X">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Cell 2 Temp</label>
-                                <input name="cell_temp_2" type="text" class="textBox req_field" value="<?=$battery_saved_data->cell_temp_2?>" placeholder="XX.X">
+                                <input name="cell_temp_2" type="text" class="textBox temprature_data" value="<?=$battery_saved_data->cell_temp_2?>" placeholder="XX.X">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Cell 3 Temp</label>
-                                <input name="cell_temp_3" type="text" class="textBox req_field" value="<?=$battery_saved_data->cell_temp_3?>" placeholder="XX.X">
+                                <input name="cell_temp_3" type="text" class="textBox temprature_data" value="<?=$battery_saved_data->cell_temp_3?>" placeholder="XX.X">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Cell 4 Temp</label>
-                                <input name="cell_temp_4" type="text" class="textBox req_field" value="<?=$battery_saved_data->cell_temp_4?>" placeholder="XX.X">
+                                <input name="cell_temp_4" type="text" class="textBox temprature_data" value="<?=$battery_saved_data->cell_temp_4?>" placeholder="XX.X">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Cell 5 Temp</label>
-                                <input name="cell_temp_5" type="text" class="textBox req_field" value="<?=$battery_saved_data->cell_temp_5?>" placeholder="XX.X">
+                                <input name="cell_temp_5" type="text" class="textBox temprature_data" value="<?=$battery_saved_data->cell_temp_5?>" placeholder="XX.X">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Issue Type 1</label>

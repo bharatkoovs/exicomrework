@@ -150,15 +150,18 @@ class Home extends MX_Controller {
             $battery_details->city = $city;
             $battery_details->current_software_version = $current_software_version;
             $battery_details->module_soc = $module_soc;
-            $battery_details->module_voltage = $module_voltage;
+            if(!empty($module_voltage))
+                $battery_details->module_voltage = $module_voltage;
             
             for($i = 1; $i <= 15; $i++){
                 $cell_name = 'cell'.$i;
-                $battery_details->$cell_name = $cell[$i];
+                if(!empty($cell[$i]))
+                    $battery_details->$cell_name = $cell[$i];
             }
             for($i = 1; $i <= 5; $i++){
                 $cell_temp_name = 'cell_temp_'.$i;
-                $battery_details->$cell_temp_name = $cell_temp[$i];
+                if(!empty($cell_temp[$i]))
+                    $battery_details->$cell_temp_name = $cell_temp[$i];
             }
             
             $battery_details->issue_type_1 = $issue_type_1;
@@ -215,7 +218,8 @@ class Home extends MX_Controller {
             
             for($i = 1; $i <= 15; $i++){
                 $rework_cell_name = 'rework_cell'.$i;
-                $battery_details->$rework_cell_name = $rework_cell[$i];
+                if(!empty($rework_cell[$i]))
+                    $battery_details->$rework_cell_name = $rework_cell[$i];
             }
 
            // echo "<pre>"; print_r($battery_details); die;

@@ -140,6 +140,12 @@ $(document).ready(function(){
             voltage: true,
         }
     });
+    $.validator.addClassRules({
+        temprature_data: {
+            required: true,
+            temprature: true,
+        }
+    });
     
     $.validator.addClassRules({
     req_field: {
@@ -157,7 +163,12 @@ $(document).ready(function(){
     $.validator.addMethod('voltage', function(value, element) {
         return this.optional(element) || (value.match(/\d\d\.\d\V$/)) || (value.match(/\d\.\d\V$/));
     },
-    'Voltage format is not correct. Format should be XX.X');
+    'Voltage format should be XX.X');
+    
+    $.validator.addMethod('temprature', function(value, element) {
+        return this.optional(element) || (value.match(/\d\d\.\d$/)) || (value.match(/\d\.\d$/));
+    },
+    'Temprature format should be XX.X');
     
     $('#form_battery_proceed').click(function(){
         if($('#battery_data_form').valid()){
@@ -229,8 +240,7 @@ $(document).ready(function(){
             data: formData,
             async: false,
             success: function (data) {
-                console.log(data);
-                alert("Data saved");
+                alert("Battery Data saved");
                 window.location = base_url+'cases';
             },
             cache: false,
@@ -251,8 +261,7 @@ $(document).ready(function(){
             data: formData,
             async: false,
             success: function (data) {
-                console.log(data);
-                alert("Data saved");
+                alert("CBMS Data saved");
                 window.location = base_url+'cases';
             },
             cache: false,
