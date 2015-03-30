@@ -39,7 +39,7 @@ class Home extends MX_Controller {
             if($case == 'battery'){
                 if($serial_number){
                     $serial_no = $serial_number;
-                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'reowrk_type', 1, 'serial_no', $serial_no, null);
+                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'rework_type', 1, 'serial_no', $serial_no, null);
                 } else
                     $serial_no = $this->input->post("battery_number", true);
                 
@@ -54,7 +54,7 @@ class Home extends MX_Controller {
             if($case == 'cbms'){
                 if($serial_number){
                     $serial_no = $serial_number;
-                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'reowrk_type', 2, 'serial_no', $serial_no, null);
+                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'rework_type', 2, 'serial_no', $serial_no, null);
                 } else
                     $serial_no = $this->input->post("cbms_number", true);
                 $this->data['serial_no'] = $serial_no;
@@ -65,8 +65,8 @@ class Home extends MX_Controller {
                 $this->load->view('cbms_view', $this->data);
                 return;
             }
-            $this->data['saved_battery'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'save_type', 1, 'reowrk_type', 1, null);
-            $this->data['saved_cbms'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'save_type', 1, 'reowrk_type', 2, null);
+            $this->data['saved_battery'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'save_type', 1, 'rework_type', 1, null);
+            $this->data['saved_cbms'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'save_type', 1, 'rework_type', 2, null);
             $this->load->view('cases_view', $this->data);
 	}
         
@@ -144,7 +144,7 @@ class Home extends MX_Controller {
             $battery_details->datecreated = $date;
             $battery_details->save_type = $save_type;
             $battery_details->serial_no = $serial_no;
-            $battery_details->reowrk_type = 1;
+            $battery_details->rework_type = 1;
             $battery_details->site_option = $site_option;
             $battery_details->site_name = $site_name;
             $battery_details->city = $city;
@@ -291,7 +291,7 @@ class Home extends MX_Controller {
             } else
                 $battery_details->created_by = $user->email;
             $battery_details->save_type = $save_type;
-            $battery_details->reowrk_type = 2;
+            $battery_details->rework_type = 2;
             $battery_details->datecreated = $date;
             $battery_details->serial_no = $serial_no;
             $battery_details->site_option = $site_option;
@@ -384,7 +384,7 @@ class Home extends MX_Controller {
             }
             $this->load->model('usermodel');
             
-            $this->data['saved_cases'] = $this->usermodel->getPojos('', null, null, 'rework_data', 'save_type', 1, 'reowrk_type', $type, null);
+            $this->data['saved_cases'] = $this->usermodel->getPojos('', null, null, 'rework_data', 'save_type', 1, 'rework_type', $type, null);
             $this->load->view('saved_cases', $this->data);
         }
 }
