@@ -11,7 +11,7 @@
             <?php $global_user = get_loggedin_user(); ?>
             <?php  
             if(!empty($global_user)){
-                echo 'You are logged in as '.$global_user->email.'. <a href="'.  site_url('signup/logout').'">Click</a> to use another user.';
+                echo 'HELLO!! You are logged in as '.$global_user->email.'. <a href="'.  site_url('signup/logout').'">Click</a> to use another user.';
             }
             $message = getSessionValue('message', 'flash');
             $error = getSessionValue('error', 'flash');
