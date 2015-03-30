@@ -1,0 +1,24 @@
+DirectoryIndex index.php
+
+RewriteEngine on
+
+#RewriteCond %{REMOTE_HOST} !^122\.172\.229\.171$
+#RewriteCond %{REMOTE_HOST} !^122\.172\.229\.171
+#RewriteCond %{HTTP:X-FORWARDED-FOR} !^182.72.150.162$
+#RewriteCond %{HTTP:X-FORWARDED-FOR} !^27.251.13.115$
+#RewriteCond %{HTTP:X-FORWARDED-FOR} !^27.251.7.230$
+#RewriteRule ^(.+)$ maintenance.html [L]
+#RewriteCond %{HTTP_HOST} ^koovs.com [NC]
+#RewriteRule ^(.*)$ http://staging.koovs.com/$1 [L,R=301]
+
+#RewriteCond %{HTTP_HOST} ^li91-80.members.linode.com [NC]
+#RewriteRule ^(.*)$ http://staging.koovs.com/$1 [L,R=301]
+
+#RewriteCond %{HTTP_HOST} ^ec2-46-137-192-211.ap-southeast-1.compute.amazonaws.com [NC]
+#RewriteRule ^(.*)$ http://staging.koovs.com/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|css|js|robots\.txt)
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.+)$ index.php?$1 [L]

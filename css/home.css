@@ -1,0 +1,167 @@
+.login_form_container{width:250px;margin:0px auto; display:block;margin-top:25px;}
+.loogin_area{width:100%;display:block;margin-bottom:10px;}
+.error{color:red;height:10px;font-size:12px;display:block;text-align:center;}
+.login_buttonContainer{width:250px; margin:0px auto;}
+.password_area{width:100%;display:block;margin-bottom:5px;}
+.login_button{width:246px;cursor:pointer;height:23px;text-align:center;margin:0px auto;background-color:rgb(230, 230, 230);border:2px solid #757575;border-radius:10px;}
+.login_button .login_text{padding:0px;font-size:13px;color:#000000;text-transform:uppercase;margin:0px;margin-top:5px;}
+.right{float: right!important;}
+
+
+.login_cont{text-align: center;font-family: verdana; font-size: 12px;padding-bottom:5px; border-bottom: 1px solid #d5d5d5;}
+.content_wrapper{max-width:980px;margin:0px auto; padding:0px;display:block;width: 100%;font-family: verdana; font-size: 13px; line-height: 100%;}
+#bodyContent{margin:0px auto;padding:0px;display:block;width: 100%;}
+.contentWrapper{margin:0px auto;padding:0px;display:block;width: 100%;text-align: center;}
+
+.header{margin-bottom: 10px;max-width:980px;margin:0px auto;display:block;width: 100%;font-family: verdana; font-size: 13px; line-height: 100%;}
+.logo_container{width:100%;margin:0px auto;display:block;text-align: center;} 
+.eneryQB_logo{display:inline-block;width:220px;text-align:center;}
+.eneryQB_logo img{width:220px;display:block;border:none;}
+#message{
+  width: 100%; 
+  color: #005702;
+  font-size: 12px;
+  font-family: verdana;
+  border: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 4px 0;
+  background-color: #99BC99;
+}
+.errorInfo{
+  width: 100%; 
+  color: #A70000;
+  font-size: 12px;
+  font-family: verdana;
+  border: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 4px 0;
+  background-color: #D893A1;
+}
+
+.textBox{width:95%;height:25px!important;border:2px solid #757575;color:#3A3A3A;font-size:12px!important;border-radius:5px;padding-left:10px;max-width: 304px;}
+.loginTextBox{width: 100%;}
+.selectBox{max-width:320px!important; width: 100%;}
+.error{color:red;height:10px;font-size:12px;display:block;text-align:center;}
+.battery_form{width:320px;display:block;margin:0px auto;margin-top:25px;}
+.label_text{height:20px;display:block;margin-top: 10px;}
+.label_input_container{margin-bottom:0;height: 65px;position: relative;}
+#remarks1{height:60px!important;padding-top:8px;}
+.fileupload{
+  padding: 0;
+  height: 19px;
+  text-align: right;
+  border: 1px solid #757575;
+}
+.image_cont{text-align: center;}
+.label_height_cont{height: auto!important;}
+.label_input_container img{padding-top: 10px;}
+.add_more_issues{text-align:center;font-size:13px;text-transform:uppercase;text-decoration:underline;color:#757575;cursor:pointer;margin: 30px 0;}
+.next{text-align:center;float:right!important;margin:0px;margin-bottom:30px;font-size:13px;text-transform:uppercase;text-decoration:underline;color:#757575;cursor:pointer;}
+.form_button_wrapper{margin:20px 0;height: 30px!important;}
+.form_btn{
+  display: inline;
+  list-style: none;
+  position: relative;
+  text-align: center;
+  background: #e1e1e1 url(/images/blue.gif) no-repeat -4px -44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  float: left;
+  cursor:pointer;
+}
+.form_btn p{
+  text-shadow: -1px -1px 1px #1c2a3d;
+  width: 91px;
+  position: relative;
+  float: left;
+  line-height: 30px;
+  background: #e1e1e1 url(/images/blue.gif) no-repeat -190px -44px;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 0 0 15px;
+  padding: 0 15px 0 0;
+  border-radius: 0 8px 8px 0;
+}
+.form_btn:hover{background-position: -4px -83px;}
+.form_btn p:hover{background-position: -190px -83px;}
+.form-bat-head{text-align: center;margin: 19px 0 4px;}
+.remarks{height:60px!important;padding-top:8px;}
+.battery_proceedWrapper{height: 25px;max-width:315px;text-align:center;cursor:pointer;display:block;background-color:rgb(230, 230, 230);border:2px solid #757575; border-radius:6px;margin:15px 0;width: 99%;}
+.battery_proceedWrapper p{margin:0px;font-size:14px;line-height: 25px;}
+.battery_proceedWrapper{clear:both;}
+.battery_proceed{height: 25px; margin-top: 30px;}
+.battery_proceed p{line-height: 25px; margin: 0;}
+.back{text-align:center;float:left;margin:0px;margin-bottom:10px;font-size:13px;text-transform:uppercase;text-decoration:underline;color:#757575;cursor:pointer;}
+
+.log_case_button_container{max-width:320px;margin:0px auto;display:block;width:100%;}
+.log_case_battery, .saved_case_battery, .saved_case_cbms{max-width:150px;cursor:pointer;background-color:rgb(230, 230, 230);display:inline-block;border:2px solid #757575;border-radius:10px;margin-right: 5px;width: 47%; float:left;}
+.log_case_battery a, .saved_case_battery a, .saved_case_cbms a{text-decoration: none;color:#000;}
+.log_case_battery p, .saved_case_battery p, .saved_case_cbms p{font-size: 12px;margin:0;line-height: 34px;}
+.log_case_cbms{max-width:150px;background-color:rgb(230, 230, 230);cursor:pointer;display:inline-block;border:2px solid #757575;border-radius:10px;width: 47%;}
+.log_case_button_container p{text-align:center;line-height: 34px;margin:0;}
+.log_case_button_container{margin-top:25px;}
+.inputBoxContainer{width:100%;display:block;margin:0px auto;margin-top:25px;}
+.log_battery_caseInput{max-width:320px;display:block;margin:0px auto;width: 100%;}
+
+.log_cbms_caseInput{width:320px;display:block;margin:0px auto;}
+#battery_button{display:none;}
+#cbms_button{display:none;}
+.error{color:red;height:10px;font-size:12px;display:block;text-align:center;line-height: 21px; font-size: 10px; text-align: left;padding-left: 10px;}
+.faultScreen, .reworkScreen{width: 100%; max-width: 320px;display: inline-block; text-align: left;}
+.img_upload{  border: 2px solid #757575;max-width: 317px;width: 100%;height: 16px;}
+#suggestions{
+    position: absolute;
+  width: 99%;
+  height: auto;
+  border: 1px solid #CCC;
+  background: #FFF;
+  z-index: 1;
+  display: none;
+  top: 51px;
+  box-shadow: 0px 3px 8px #ccc;
+}
+#suggestions span{
+  padding: 5px 10px;
+  display: block;
+  background: #FFF;
+  cursor: pointer;
+}
+#suggestions span:hover{background: #CCC;}
+#summary{color:red;font-size: 10px;}
+.innerContentWrapper{
+  display: inline-block;
+  width: 100%;
+  max-width: 319px;
+}
+.list_saved_items{
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  border: 1px solid #CCC;
+  padding: 10px 0;
+}
+.list_saved_items ol {
+    padding-left: 60px;
+}
+.list_saved_items ol li a{
+    text-decoration: none;
+    color: #000;
+}
+.list_saved_items ol li a:hover{
+    text-decoration: underline;
+    color: #000;
+}
+.saved_cases_title{
+    padding: 10px 0 20px;
+}
+.remove_img{
+  vertical-align: top;
+  line-height: 50px;
+  float: right;
+  padding-right: 10px;
+}
