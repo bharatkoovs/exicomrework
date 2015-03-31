@@ -234,7 +234,8 @@ $(document).ready(function(){
         $('#save_type').val(1);
         var formData = new FormData($("#battery_data_form")[0]);
         var url = base_url+"home/save_battery_data";
-        $('.save_loader').show();        
+        $('.save_loader').show();  
+        setTimeout(function(){
         $.ajax({
             url: url,
             type: "POST",
@@ -253,7 +254,7 @@ $(document).ready(function(){
             contentType: false,
             processData: false
         });
-
+        }, 200);
         e.preventDefault();
     });
     
@@ -262,6 +263,7 @@ $(document).ready(function(){
         var formData = new FormData($("#cbms_data_form")[0]);
         var url = base_url+"home/save_cbms_data";
         $('.save_loader').show();
+        setTimeout(function(){
         $.ajax({
             url: url,
             type: "POST",
@@ -280,6 +282,7 @@ $(document).ready(function(){
             contentType: false,
             processData: false
         });
+        }, 200);
 
         e.preventDefault();
     });
