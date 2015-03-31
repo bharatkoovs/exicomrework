@@ -20,7 +20,8 @@
                     $file_name = $uploadPath.$_FILES[$upload_file_name]["name"];
 
                     if (file_exists($file_name)) {
-                        unlink($file_name);
+                        list($name, $ext) = explode('.', $file_name);
+                        $file_name = $name."_".date("Y-m-d-H-i-s").".".$ext;
                     }
 
                     move_uploaded_file($_FILES[$upload_file_name]["tmp_name"], $file_name);
