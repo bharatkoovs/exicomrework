@@ -234,8 +234,7 @@ $(document).ready(function(){
         $('#save_type').val(1);
         var formData = new FormData($("#battery_data_form")[0]);
         var url = base_url+"home/save_battery_data";
-        $('.save_loader').show();
-        return;
+        $('.save_loader').show();        
         $.ajax({
             url: url,
             type: "POST",
@@ -263,7 +262,6 @@ $(document).ready(function(){
         var formData = new FormData($("#cbms_data_form")[0]);
         var url = base_url+"home/save_cbms_data";
         $('.save_loader').show();
-        return;
         $.ajax({
             url: url,
             type: "POST",
