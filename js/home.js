@@ -240,7 +240,7 @@ $(document).ready(function(){
             url: url,
             type: "POST",
             data: formData,
-            async: false,
+            async: true,
             success: function (data) {
                 $('.save_loader').hide();
                 alert("Battery Data saved");
@@ -268,7 +268,7 @@ $(document).ready(function(){
             url: url,
             type: "POST",
             data: formData,
-            async: false,
+            async: true,
             success: function (data) {
                 $('.save_loader').hide();
                 alert("CBMS Data saved");
