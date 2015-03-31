@@ -2,6 +2,9 @@
 <div class="content_wrapper">
         
 	<div id="bodyContent">
+            <div class="save_loader" style="position:absolute;width: 100%; height: 100%; top: 0;left: 0;">
+                <img src="<?=base_url()?>images/loader_blue.gif" width="70px"/>
+            </div>
             <div class="form-bat-head">CBMS Fault Screen</div>
                 <div class="contentWrapper<?=($is_mobile) ? ' right_swipe' : '' ?>">
                 <?php

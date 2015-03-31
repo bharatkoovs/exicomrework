@@ -234,14 +234,21 @@ $(document).ready(function(){
         $('#save_type').val(1);
         var formData = new FormData($("#battery_data_form")[0]);
         var url = base_url+"home/save_battery_data";
+        $('.save_loader').show();
+        return;
         $.ajax({
             url: url,
             type: "POST",
             data: formData,
             async: false,
             success: function (data) {
+                $('.save_loader').hide();
                 alert("Battery Data saved");
                 window.location = base_url+'cases';
+            },
+            error: function(data){
+                $('.save_loader').hide();
+                alert("Something went wrong");
             },
             cache: false,
             contentType: false,
@@ -255,14 +262,21 @@ $(document).ready(function(){
         $('#save_type').val(1);
         var formData = new FormData($("#cbms_data_form")[0]);
         var url = base_url+"home/save_cbms_data";
+        $('.save_loader').show();
+        return;
         $.ajax({
             url: url,
             type: "POST",
             data: formData,
             async: false,
             success: function (data) {
+                $('.save_loader').hide();
                 alert("CBMS Data saved");
                 window.location = base_url+'cases';
+            },
+            error: function(data){
+                $('.save_loader').hide();
+                alert("Something went wrong");
             },
             cache: false,
             contentType: false,
