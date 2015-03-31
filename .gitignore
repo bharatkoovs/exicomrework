@@ -10,3 +10,5 @@ application/logs/*
 uploads/outlookImgAsos.jpg
 
 uploads/unnamed (2).png
+
+application/controllers/config.php
