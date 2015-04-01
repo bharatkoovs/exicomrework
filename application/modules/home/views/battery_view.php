@@ -159,7 +159,12 @@
                             </div>
                             <div class="label_input_container label_image_cont">
                                 <label class="label_text">Photo 1</label>
-                                <input name="image1" type="file" data-count="1" class="img_upload img_upload1"  <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                <div class="custom_file_upload">
+                                    <input type="text" class="file file1" name="file_info">
+                                    <div class="file_upload">
+                                        <input name="image1" type="file" data-count="1" class="img_upload img_upload1">
+                                    </div>
+                                </div>
                                 <output id="list1"></output>
                                 <input type="hidden" id="existing_image1" name="existing_image1" value="<?=$battery_saved_data->photo_1?>">
                                 <div class="image2_cont image_cont">
@@ -195,7 +200,12 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 2</label>
-                                    <input name="image2" type="file" data-count="2" class="img_upload img_upload2" <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <div class="custom_file_upload">
+                                        <input type="text" class="file file2" name="file_info">
+                                        <div class="file_upload">
+                                            <input id="file_upload" name="image2" type="file" data-count="2" class="img_upload img_upload2">
+                                        </div>
+                                    </div>
                                     <output id="list2"></output>
                                     <input type="hidden" id="existing_image2" name="existing_image2" value="<?=$battery_saved_data->photo_2?>">
                                     <div class="image2_cont image_cont">
@@ -232,7 +242,12 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 3</label>
-                                    <input name="image3" type="file" data-count="3" class="img_upload img_upload3"  <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <div class="custom_file_upload">
+                                        <input type="text" class="file file3" name="file_info">
+                                        <div class="file_upload">
+                                                <input name="image3" type="file" data-count="3" class="img_upload img_upload3">
+                                        </div>
+                                    </div>
                                     <output id="list3"></output>
                                     <input type="hidden" id="existing_image3" name="existing_image3" value="<?=$battery_saved_data->photo_3?>">
                                     <div class="image3_cont image_cont">
@@ -269,7 +284,12 @@
                                 </div>
                                 <div class="label_input_container label_image_cont">
                                     <label class="label_text">Photo 4</label>
-                                    <input name="image4" type="file" data-count="4" class="img_upload img_upload4" <?=($is_mobile && false) ? 'accept="image/*;capture=camera"' : '' ?>>
+                                    <div class="custom_file_upload">
+                                        <input type="text" class="file file4" name="file_info">
+                                        <div class="file_upload">
+                                            <input name="image4" type="file" data-count="4" class="img_upload img_upload4">
+                                        </div>
+                                    </div>
                                     <output id="list4"></output>
                                     <input type="hidden" id="existing_image4" name="existing_image4" value="<?=$battery_saved_data->photo_4?>">
                                     <div class="image4_cont image_cont">

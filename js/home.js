@@ -419,6 +419,7 @@ $(document).ready(function(){
         var img = $(this).data('no');
         $('#list'+img).html('');
         $('.img_upload'+img).val('');
+        $('.file'+file_no).val('');
         $(this).hide();
     });
 });
@@ -428,6 +429,7 @@ $(document).ready(function(){
   $('.img_upload').on('change', function(evt){
       file_no = $(this).data('count'); 
       $('#list'+file_no).html(''); 
+      $('.file'+file_no).val('');
       var files = evt.target.files;
 
     for (var i = 0, f; f = files[i]; i++) {
@@ -445,6 +447,7 @@ $(document).ready(function(){
           $('#list'+file_no).append('<span class="remove_curr remove_curr_img'+file_no+'" data-no="'+file_no+'">Remove</span>')
           $('.current_img'+file_no).hide();
           $('.remove_img'+file_no).hide();
+          $('.file'+file_no).val(escape(theFile.name));
         };
       })(f);
       
