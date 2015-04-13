@@ -22,7 +22,7 @@ class Home extends MX_Controller {
             $this->load->view('footer');
         }
         
-        public function cases($case = '', $serial_number = 0){
+        public function cases($case = '', $serial_number = 0, $saved_id = 0){
             $user = get_loggedin_user(); 
             
             if(empty($user)){
@@ -38,14 +38,18 @@ class Home extends MX_Controller {
             $this->load->model('usermodel');
             if($case == 'battery'){
                 if($serial_number){
-                    $serial_no = $serial_number;
-                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'rework_type', 1, 'serial_no', $serial_no, null);
+                    if($saved_id){
+                        $serial_no = $serial_number;
+                        $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'id', $saved_id, 'serial_no', $serial_no, null);
+                        if(empty($this->data['battery_saved_data']))
+                            $serial_no = '';
+                    }
                 } else
                     $serial_no = $this->input->post("battery_number", true);
                 
                 $this->data['serial_no'] = $serial_no;
                 if(empty($serial_no)){
-                    $this->session->set_flashdata('message', 'Please enter the serial number');
+                    $this->session->set_flashdata('message', 'Please enter the correct serial number');
                     redirect('cases');
                 }
                 $this->load->view('battery_view', $this->data);
@@ -53,13 +57,17 @@ class Home extends MX_Controller {
             }
             if($case == 'cbms'){
                 if($serial_number){
-                    $serial_no = $serial_number;
-                    $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'rework_type', 2, 'serial_no', $serial_no, null);
+                    if($saved_id){
+                        $serial_no = $serial_number;
+                        $this->data['battery_saved_data'] = $this->usermodel->getPojo('site_data', null, 'rework_data', 'id', $saved_id, 'serial_no', $serial_no, null);
+                        if(empty($this->data['battery_saved_data']))
+                            $serial_no = '';
+                    }
                 } else
                     $serial_no = $this->input->post("cbms_number", true);
                 $this->data['serial_no'] = $serial_no;
                 if(empty($serial_no)){
-                    $this->session->set_flashdata('message', 'Please enter the serial number');
+                    $this->session->set_flashdata('message', 'Please enter the correct serial number');
                     redirect('cases');
                 }
                 $this->load->view('cbms_view', $this->data);
@@ -350,41 +358,61 @@ class Home extends MX_Controller {
             $serial_no = $this->input->post('serial_number', true);
             if(!empty($serial_no)){
                 $this->load->model('usermodel');
-                $chk_lookup = $this->usermodel->getPojo('site_data', null, 'rework_data', 'serial_no', $serial_no, null, null, null);
+                //$chk_lookup = $this->usermodel->getPojo('site_data', null, 'rework_data', 'serial_no', $serial_no, null, null, null);
                 
-                if(!empty($chk_lookup)){
-                    
-                    $arr_title = array();$arr_val = array();
-                    $type = $chk_lookup->rework_type;
+                
+                $chk_lookups = $this->usermodel->getPojos('site_data', $sql, null, 'rework_data', 'serial_no', $serial_no, null, null, 'id asc');
+                
+                if(!empty($chk_lookups)){
+                    $i = 0;
+                    $type = '';
+                    $arr_title = array();$arr_vals = array();
                     $battery_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","current_software_version","module_soc","module_voltage","cell1","cell2","cell3","cell4","cell5","cell6","cell7","cell8","cell9","cell10","cell11","cell12","cell13","cell14","cell15","cell_temp_1","cell_temp_2","cell_temp_3","cell_temp_4","cell_temp_5","issue_type_1","remarks_1","photo_1","issue_type_2","remarks_2","photo_2","issue_type_3","remarks_3","photo_3","issue_type_4","remarks_4","photo_4","replaced_serial_no","module_repairable","module_repaired_in","cell_replaced","bms_replaced","software_updated","updated_software_version","cable_loom_replaced","module_body_parts_replaced","module_charged_up","cell_level_charger_used","rework_note","rework_module_soc","rework_module_voltage","narada_rep_present","rework_cell1","rework_cell2","rework_cell3","rework_cell4","rework_cell5","rework_cell6","rework_cell7","rework_cell8","rework_cell9","rework_cell10","rework_cell11","rework_cell12","rework_cell13","rework_cell14","rework_cell15","datecreated","dateupdated");
                     $cbms_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","current_software_version","issue_type_1","remarks_1","issue_type_2","remarks_2","issue_type_3","remarks_3","issue_type_4","remarks_4","module_repaired_in","software_updated","updated_software_version","control_card_replaced","disconnector_card_replaced","internal_cables_replaced","external_cables_replaced","pp_connector_status","communication_status","battery_connector_status","rework_note");
-                    if($type == 1)
-                        $fields_array = $battery_fields;
-                    else
-                        $fields_array = $cbms_fields;
-                    
                     $site_option = array("ODC","GBM","Pre Fab Shelter","Warehouse");
                     $issue_type = array("","BMS Issue / Faulty","Cable Harness / Hardware Issue","Battery Terminals Loose/Broken/Corroded","Plastic Cap loose / missing","Battery Cell Swollen","Battery Cell Leakage","Cell Sleeve Damage","Unbalanced Cell voltage (>0.5V)","Cell Deep Discharge","PRV faulty","Grouping sticker missing","Module Deep Discharge","Module Body Rusted");
                     $module_repaired_in = array("Warehouse","Site","BRC");
-                    foreach ($chk_lookup as $key=>$value){
-                        if(in_array($key, $fields_array)){
-                            $arr_title[] = ucwords(str_replace('_', ' ', $key));
-                            if($key == 'site_option')
-                                $value = $site_option[$value];
-                            if (strpos($key, 'issue_type') === 0)
-                                $value = $issue_type[$value];
-                            if($key == 'module_repaired_in')
-                                $value = $module_repaired_in[$value];
-                            $arr_val[] = $value;
+                    foreach($chk_lookups as $chk_lookup){
+                        if($i == 0)
+                            $type = $chk_lookup->rework_type;
+                        
+                        if($type == 1)
+                            $fields_array = $battery_fields;
+                        else
+                            $fields_array = $cbms_fields;
+
+                        
+                        foreach ($chk_lookup as $key=>$value){
+                            if(in_array($key, $fields_array)){
+                                if($i == 0)
+                                    $arr_title[] = ucwords(str_replace('_', ' ', $key));
+                                if($key == 'site_option')
+                                    $value = $site_option[$value];
+                                if (strpos($key, 'issue_type') === 0)
+                                    $value = $issue_type[$value];
+                                if($key == 'module_repaired_in')
+                                    $value = $module_repaired_in[$value];
+                                if($key == 'serial_no')
+                                    $value = "'".$value."'";
+                                if ((strpos($key,'photo') !== false) && !empty($value)) {
+                                    $value = base_url().$value;
+}
+                                $arr_vals[$i][] = $value;
+                            }
                         }
+                        $i++;
                     }
+                    
                     $rework_type = ($type == 1) ? 'battery' : 'cbms';
                     $filename = $rework_type."_data_" . date('d-M-y-h:i:A') . ".xls";
                     header("Content-Disposition: attachment; filename=\"$filename\"");
                     header("Content-Type: application/vnd.ms-excel");
 
                     echo implode("\t", $arr_title) . "\r\n";
-                    echo implode("\t", $arr_val) . "\r\n";
+                    foreach($arr_vals as $arr_val){
+                        echo implode("\t", $arr_val) . "\r\n";
+                    }
+                    
                 } else{
                     $this->session->set_flashdata('error', 'Either serial number is wrong or data not present');
                     redirect('home/download_report');

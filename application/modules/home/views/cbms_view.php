@@ -67,7 +67,7 @@
                             </div>
                             <div class="label_input_container label_height_cont ">                            
                                 <label class="label_text">Remark 1</label>
-                                <textarea name="remarks_1" class="textBox req_field" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_1?></textarea>
+                                <textarea name="remarks_1" class="textBox req_field check_remark" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_1?></textarea>
                             </div>
                             <div class="issue_2 moreIssues" style="<?=($battery_saved_data->issue_type_2 || $battery_saved_data->remarks_2) ? 'display:block;' : 'display:none;'?>">
                                 <div class="label_input_container">
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="label_input_container label_height_cont">
                                 <label class="label_text">Remark 2</label>
-                                <textarea name="remarks_2" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_2?></textarea>
+                                <textarea name="remarks_2" class="textBox check_remark" id="remarks2" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_2?></textarea>
                                 </div>
                             </div>
                             <div class="issue_3 moreIssues" style="<?=($battery_saved_data->issue_type_2 || $battery_saved_data->remarks_2) ? 'display:block;' : 'display:none;'?>">
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="label_input_container label_height_cont">
                                 <label class="label_text">Remark 3</label>
-                                <textarea name="remarks_3" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_3?></textarea>
+                                <textarea name="remarks_3" class="textBox check_remark" id="remarks3" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_3?></textarea>
                                 </div>
                             </div>
                             <div class="issue_4 moreIssues" style="<?=($battery_saved_data->issue_type_2 || $battery_saved_data->remarks_2) ? 'display:block;' : 'display:none;'?>">
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="label_input_container label_height_cont">
                                 <label class="label_text">Remark 4</label>
-                                <textarea name="remarks_4" class="textBox" id="remarks1" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_4?></textarea>
+                                <textarea name="remarks_4" class="textBox check_remark" id="remarks4" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_4?></textarea>
                                 </div>
                             </div>
                             
@@ -236,7 +236,7 @@
                             </div>                        
                             <div class="label_input_container label_height_cont">                            
                                 <label class="label_text">Rework Note</label>
-                                <textarea name="rework_note" class="textBox remarks req_field" placeholder="Enter Remarks"><?=$battery_saved_data->rework_note?></textarea>
+                                <textarea name="rework_note" id="rework_note" class="textBox remarks req_field check_remark" placeholder="Enter Remarks"><?=$battery_saved_data->rework_note?></textarea>
                             </div>  
                             <div class="label_input_container form_button_wrapper">
                                 <div class="form_btn right" id="save_rework_cbms_proceed">

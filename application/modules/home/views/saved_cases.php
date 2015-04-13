@@ -8,7 +8,7 @@
                         <ol type="1">
                         <?php foreach($saved_cases as $save_case){?>
                             <li>
-                                <a href="<?=base_url()?>cases/<?=$type?>/<?=$save_case->serial_no?>" style="padding: 10px;display: block;"><?=$save_case->serial_no?></a>
+                                <a href="<?=base_url()?>cases/<?=$type?>/<?=$save_case->serial_no?>/<?=$save_case->id?>" style="padding: 10px;display: block;"><?=$save_case->serial_no?></a>
                             </li>
                         <?php }?>
                         </ol>

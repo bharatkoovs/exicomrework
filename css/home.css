@@ -46,7 +46,7 @@ body{position:relative;}
 .battery_form{width:320px;display:block;margin:0px auto;margin-top:25px;}
 .label_text{height:20px;display:block;margin-top: 10px;}
 .label_input_container{margin-bottom:0;height: 65px;position: relative;}
-#remarks1{height:60px!important;padding-top:8px;}
+#remarks1, #remarks2, #remarks3, #remarks4{height:60px!important;padding-top:8px;}
 .fileupload{
   padding: 0;
   height: 19px;

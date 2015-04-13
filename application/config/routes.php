@@ -43,6 +43,7 @@ $route['404_override'] = '';
 $route['cases'] = "home/cases";
 $route['cases/([^/]*)'] = "home/cases/$1";
 $route['cases/([^/]*)/([^/]*)'] = "home/cases/$1/$2";
+$route['cases/([^/]*)/([^/]*)/([^/]*)'] = "home/cases/$1/$2/$3";
 
 
 /* End of file routes.php */

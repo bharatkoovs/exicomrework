@@ -153,15 +153,25 @@ $(document).ready(function(){
         }
     });
     
+    $.validator.addClassRules({
+        check_remark: {
+            maxlength: 300
+        }
+    });
+    
    $('.voltage_data').on('blur', function(){
         var vl = $(this).val();
         if(vl.match(/\d\.\d$/)){
             $(this).val(vl+"V");
         }
+        if(vl.match(/\d\.\dv$/)){
+            var n_val = vl.replace('v', 'V');
+            $(this).val(n_val);
+        }
         validator.element( this );
     });
     $.validator.addMethod('voltage', function(value, element) {
-        return this.optional(element) || (value.match(/\d\d\.\d\V$/)) || (value.match(/\d\.\d\V$/));
+        return this.optional(element) || value.match(/^(?=.*\d)\d{1,2}(\.\d?)?V$/);
     },
     'Voltage format should be XX.X');
     
@@ -419,7 +429,7 @@ $(document).ready(function(){
         var img = $(this).data('no');
         $('#list'+img).html('');
         $('.img_upload'+img).val('');
-        $('.file'+file_no).val('');
+        $('.file'+img).val('');
         $(this).hide();
     });
 });
@@ -427,7 +437,7 @@ $(document).ready(function(){
 $(document).ready(function(){   
   var file_no;
   $('.img_upload').on('change', function(evt){
-      file_no = $(this).data('count'); 
+      file_no = $(this).data('count');
       $('#list'+file_no).html(''); 
       $('.file'+file_no).val('');
       var files = evt.target.files;
