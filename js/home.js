@@ -176,7 +176,7 @@ $(document).ready(function(){
     'Voltage format should be XX.X');
     
     $.validator.addMethod('temprature', function(value, element) {
-        return this.optional(element) || (value.match(/\d\d\.\d$/)) || (value.match(/\d\.\d$/));
+        return this.optional(element) || value.match(/^(?=.*\d)\d{1,2}(\.\d?)?$/);
     },
     'Temprature format should be XX.X');
     
