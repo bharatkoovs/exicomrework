@@ -59,6 +59,7 @@ $(document).ready(function(){
                 battery_number: {
                     required: true,
                     number: true,
+                    alphanum: true,
                     minlength: 20,
                     maxlength: 20
                 }
@@ -67,6 +68,7 @@ $(document).ready(function(){
                 battery_number: {
                     required: "The serial number field is required",
                     number: "Enter valid serial number",
+                    alphanum: "Enter valid serial number",
                     minlength: "Enter valid serial number",
                     maxlength: "Enter valid serial number"
                 }
@@ -82,8 +84,8 @@ $(document).ready(function(){
                 cbms_number: {
                     required: true,
                     alphanum: true,
-                    minlength: 7,
-                    maxlength: 7
+                    minlength: 8,
+                    maxlength: 8
                 }
         },
         messages: {
