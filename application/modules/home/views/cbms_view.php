@@ -50,19 +50,22 @@
                                 <label class="label_text">Issue Type 1</label>                                
                                 <select name="issue_type_1" class="textBox selectBox req_field">
                                     <option value="">Select</option>
-                                    <option value="1" <?=($battery_saved_data->issue_type_1 == 1) ? 'selected' : ''?>>BMS Issue / Faulty</option>
-                                    <option value="2" <?=($battery_saved_data->issue_type_1 == 2) ? 'selected' : ''?>>Cable Harness / Hardware Issue</option>
-                                    <option value="3" <?=($battery_saved_data->issue_type_1 == 3) ? 'selected' : ''?>>Battery Terminals Loose/Broken/Corroded</option>
-                                    <option value="4" <?=($battery_saved_data->issue_type_1 == 4) ? 'selected' : ''?>>Plastic Cap loose / missing</option>
-                                    <option value="5" <?=($battery_saved_data->issue_type_1 == 5) ? 'selected' : ''?>>Battery Cell Swollen</option>
-                                    <option value="6" <?=($battery_saved_data->issue_type_1 == 6) ? 'selected' : ''?>>Battery Cell Leakage</option>
-                                    <option value="7" <?=($battery_saved_data->issue_type_1 == 7) ? 'selected' : ''?>>Cell Sleeve Damage</option>
-                                    <option value="8" <?=($battery_saved_data->issue_type_1 == 8) ? 'selected' : ''?>>Unbalanced Cell voltage (>0.5V)</option>
-                                    <option value="9" <?=($battery_saved_data->issue_type_1 == 9) ? 'selected' : ''?>>Cell Deep Discharge</option>
-                                    <option value="10" <?=($battery_saved_data->issue_type_1 == 10) ? 'selected' : ''?>>PRV faulty</option>
-                                    <option value="11" <?=($battery_saved_data->issue_type_1 == 11) ? 'selected' : ''?>>Grouping sticker missing</option>
-                                    <option value="12" <?=($battery_saved_data->issue_type_1 == 12) ? 'selected' : ''?>>Module Deep Discharge</option>
-                                    <option value="13" <?=($battery_saved_data->issue_type_1 == 13) ? 'selected' : ''?>>Module Body Rusted</option>
+                                    <option value="1" <?=($battery_saved_data->issue_type_1 == 1) ? 'selected' : ''?>>Comm. Cross Connection</option>
+                                    <option value="2" <?=($battery_saved_data->issue_type_1 == 2) ? 'selected' : ''?>>PP Anderson Cntr. Crimping/Loose</option>
+                                    <option value="3" <?=($battery_saved_data->issue_type_1 == 3) ? 'selected' : ''?>>Battery Anderson Cntr. Crimping/Loose</option>
+                                    <option value="4" <?=($battery_saved_data->issue_type_1 == 4) ? 'selected' : ''?>>SMPS to CBMS Comm Fail</option>
+                                    <option value="5" <?=($battery_saved_data->issue_type_1 == 5) ? 'selected' : ''?>>Battery to CBMS Comm Fail</option>
+                                    <option value="6" <?=($battery_saved_data->issue_type_1 == 6) ? 'selected' : ''?>>CBMS Control Card Faulty</option>
+                                    <option value="7" <?=($battery_saved_data->issue_type_1 == 7) ? 'selected' : ''?>>Disconnector Card Faulty</option>
+                                    <option value="8" <?=($battery_saved_data->issue_type_1 == 8) ? 'selected' : ''?>>Web Page not Working</option>
+                                    <option value="9" <?=($battery_saved_data->issue_type_1 == 9) ? 'selected' : ''?>>Ethernet Cable Faulty</option>
+                                    <option value="10" <?=($battery_saved_data->issue_type_1 == 10) ? 'selected' : ''?>>Ribbon Cable Faulty</option>
+                                    <option value="11" <?=($battery_saved_data->issue_type_1 == 11) ? 'selected' : ''?>>CBMS Loom Cable Faulty</option>
+                                    <option value="12" <?=($battery_saved_data->issue_type_1 == 12) ? 'selected' : ''?>>Module Idle due to CBMS</option>
+                                    <option value="13" <?=($battery_saved_data->issue_type_1 == 13) ? 'selected' : ''?>>Memory Card Issue</option>
+                                    <option value="14" <?=($battery_saved_data->issue_type_1 == 14) ? 'selected' : ''?>>CBMS Fan Fail</option>
+                                    <option value="15" <?=($battery_saved_data->issue_type_1 == 15) ? 'selected' : ''?>>CBMS Power Resitor Burnt</option>
+                                    <option value="16" <?=($battery_saved_data->issue_type_1 == 16) ? 'selected' : ''?>>Old Software Version Present</option>
                                 </select>
                             </div>
                             <div class="label_input_container label_height_cont ">                            
@@ -73,20 +76,23 @@
                                 <div class="label_input_container">
                                     <label class="label_text">Issue Type 2</label>
                                     <select name="issue_type_2" class="textBox selectBox">
-                                        <option value="0">Select</option>
-                                        <option value="1" <?=($battery_saved_data->iissue_type_2 == 1) ? 'selected' : ''?>>BMS Issue / Faulty</option>
-                                        <option value="2" <?=($battery_saved_data->issue_type_2 == 2) ? 'selected' : ''?>>Cable Harness / Hardware Issue</option>
-                                        <option value="3" <?=($battery_saved_data->issue_type_2 == 3) ? 'selected' : ''?>>Battery Terminals Loose/Broken/Corroded</option>
-                                        <option value="4" <?=($battery_saved_data->issue_type_2 == 4) ? 'selected' : ''?>>Plastic Cap loose / missing</option>
-                                        <option value="5" <?=($battery_saved_data->issue_type_2 == 5) ? 'selected' : ''?>>Battery Cell Swollen</option>
-                                        <option value="6" <?=($battery_saved_data->issue_type_2 == 6) ? 'selected' : ''?>>Battery Cell Leakage</option>
-                                        <option value="7" <?=($battery_saved_data->issue_type_2 == 7) ? 'selected' : ''?>>Cell Sleeve Damage</option>
-                                        <option value="8" <?=($battery_saved_data->issue_type_2 == 8) ? 'selected' : ''?>>Unbalanced Cell voltage (>0.5V)</option>
-                                        <option value="9" <?=($battery_saved_data->issue_type_2 == 9) ? 'selected' : ''?>>Cell Deep Discharge</option>
-                                        <option value="10" <?=($battery_saved_data->issue_type_2 == 10) ? 'selected' : ''?>>PRV faulty</option>
-                                        <option value="11" <?=($battery_saved_data->issue_type_2 == 11) ? 'selected' : ''?>>Grouping sticker missing</option>
-                                        <option value="12" <?=($battery_saved_data->issue_type_2 == 12) ? 'selected' : ''?>>Module Deep Discharge</option>
-                                        <option value="13" <?=($battery_saved_data->issue_type_2 == 13) ? 'selected' : ''?>>Module Body Rusted</option>
+                                         <option value="">Select</option>
+                                    <option value="1" <?=($battery_saved_data->issue_type_2 == 1) ? 'selected' : ''?>>Comm. Cross Connection</option>
+                                    <option value="2" <?=($battery_saved_data->issue_type_2 == 2) ? 'selected' : ''?>>PP Anderson Cntr. Crimping/Loose</option>
+                                    <option value="3" <?=($battery_saved_data->issue_type_2 == 3) ? 'selected' : ''?>>Battery Anderson Cntr. Crimping/Loose</option>
+                                    <option value="4" <?=($battery_saved_data->issue_type_2 == 4) ? 'selected' : ''?>>SMPS to CBMS Comm Fail</option>
+                                    <option value="5" <?=($battery_saved_data->issue_type_2 == 5) ? 'selected' : ''?>>Battery to CBMS Comm Fail</option>
+                                    <option value="6" <?=($battery_saved_data->issue_type_2 == 6) ? 'selected' : ''?>>CBMS Control Card Faulty</option>
+                                    <option value="7" <?=($battery_saved_data->issue_type_2 == 7) ? 'selected' : ''?>>Disconnector Card Faulty</option>
+                                    <option value="8" <?=($battery_saved_data->issue_type_2 == 8) ? 'selected' : ''?>>Web Page not Working</option>
+                                    <option value="9" <?=($battery_saved_data->issue_type_2 == 9) ? 'selected' : ''?>>Ethernet Cable Faulty</option>
+                                    <option value="10" <?=($battery_saved_data->issue_type_2 == 10) ? 'selected' : ''?>>Ribbon Cable Faulty</option>
+                                    <option value="11" <?=($battery_saved_data->issue_type_2 == 11) ? 'selected' : ''?>>CBMS Loom Cable Faulty</option>
+                                    <option value="12" <?=($battery_saved_data->issue_type_2 == 12) ? 'selected' : ''?>>Module Idle due to CBMS</option>
+                                    <option value="13" <?=($battery_saved_data->issue_type_2 == 13) ? 'selected' : ''?>>Memory Card Issue</option>
+                                    <option value="14" <?=($battery_saved_data->issue_type_2 == 14) ? 'selected' : ''?>>CBMS Fan Fail</option>
+                                    <option value="15" <?=($battery_saved_data->issue_type_2 == 15) ? 'selected' : ''?>>CBMS Power Resitor Burnt</option>
+                                    <option value="16" <?=($battery_saved_data->issue_type_2 == 16) ? 'selected' : ''?>>Old Software Version Present</option>
                                     </select>
                                 </div>
                                 <div class="label_input_container label_height_cont">
@@ -94,24 +100,27 @@
                                 <textarea name="remarks_2" class="textBox check_remark" id="remarks2" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_2?></textarea>
                                 </div>
                             </div>
-                            <div class="issue_3 moreIssues" style="<?=($battery_saved_data->issue_type_2 || $battery_saved_data->remarks_2) ? 'display:block;' : 'display:none;'?>">
+                            <div class="issue_3 moreIssues" style="<?=($battery_saved_data->issue_type_3 || $battery_saved_data->remarks_3) ? 'display:block;' : 'display:none;'?>">
                                 <div class="label_input_container">
                                     <label class="label_text">Issue Type 3</label>
                                     <select name="issue_type_3" class="textBox selectBox">
-                                        <option value="0">Select</option>
-                                        <option value="1" <?=($battery_saved_data->iissue_type_3 == 1) ? 'selected' : ''?>>BMS Issue / Faulty</option>
-                                        <option value="2" <?=($battery_saved_data->issue_type_3 == 2) ? 'selected' : ''?>>Cable Harness / Hardware Issue</option>
-                                        <option value="3" <?=($battery_saved_data->issue_type_3 == 3) ? 'selected' : ''?>>Battery Terminals Loose/Broken/Corroded</option>
-                                        <option value="4" <?=($battery_saved_data->issue_type_3 == 4) ? 'selected' : ''?>>Plastic Cap loose / missing</option>
-                                        <option value="5" <?=($battery_saved_data->issue_type_3 == 5) ? 'selected' : ''?>>Battery Cell Swollen</option>
-                                        <option value="6" <?=($battery_saved_data->issue_type_3 == 6) ? 'selected' : ''?>>Battery Cell Leakage</option>
-                                        <option value="7" <?=($battery_saved_data->issue_type_3 == 7) ? 'selected' : ''?>>Cell Sleeve Damage</option>
-                                        <option value="8" <?=($battery_saved_data->issue_type_3 == 8) ? 'selected' : ''?>>Unbalanced Cell voltage (>0.5V)</option>
-                                        <option value="9" <?=($battery_saved_data->issue_type_3 == 9) ? 'selected' : ''?>>Cell Deep Discharge</option>
-                                        <option value="10" <?=($battery_saved_data->issue_type_3 == 10) ? 'selected' : ''?>>PRV faulty</option>
-                                        <option value="11" <?=($battery_saved_data->issue_type_3 == 11) ? 'selected' : ''?>>Grouping sticker missing</option>
-                                        <option value="12" <?=($battery_saved_data->issue_type_3 == 12) ? 'selected' : ''?>>Module Deep Discharge</option>
-                                        <option value="13" <?=($battery_saved_data->issue_type_3 == 13) ? 'selected' : ''?>>Module Body Rusted</option>
+                                        <option value="">Select</option>
+                                    <option value="1" <?=($battery_saved_data->issue_type_3 == 1) ? 'selected' : ''?>>Comm. Cross Connection</option>
+                                    <option value="2" <?=($battery_saved_data->issue_type_3 == 2) ? 'selected' : ''?>>PP Anderson Cntr. Crimping/Loose</option>
+                                    <option value="3" <?=($battery_saved_data->issue_type_3 == 3) ? 'selected' : ''?>>Battery Anderson Cntr. Crimping/Loose</option>
+                                    <option value="4" <?=($battery_saved_data->issue_type_3 == 4) ? 'selected' : ''?>>SMPS to CBMS Comm Fail</option>
+                                    <option value="5" <?=($battery_saved_data->issue_type_3 == 5) ? 'selected' : ''?>>Battery to CBMS Comm Fail</option>
+                                    <option value="6" <?=($battery_saved_data->issue_type_3 == 6) ? 'selected' : ''?>>CBMS Control Card Faulty</option>
+                                    <option value="7" <?=($battery_saved_data->issue_type_3 == 7) ? 'selected' : ''?>>Disconnector Card Faulty</option>
+                                    <option value="8" <?=($battery_saved_data->issue_type_3 == 8) ? 'selected' : ''?>>Web Page not Working</option>
+                                    <option value="9" <?=($battery_saved_data->issue_type_3 == 9) ? 'selected' : ''?>>Ethernet Cable Faulty</option>
+                                    <option value="10" <?=($battery_saved_data->issue_type_3 == 10) ? 'selected' : ''?>>Ribbon Cable Faulty</option>
+                                    <option value="11" <?=($battery_saved_data->issue_type_3 == 11) ? 'selected' : ''?>>CBMS Loom Cable Faulty</option>
+                                    <option value="12" <?=($battery_saved_data->issue_type_3 == 12) ? 'selected' : ''?>>Module Idle due to CBMS</option>
+                                    <option value="13" <?=($battery_saved_data->issue_type_3 == 13) ? 'selected' : ''?>>Memory Card Issue</option>
+                                    <option value="14" <?=($battery_saved_data->issue_type_3 == 14) ? 'selected' : ''?>>CBMS Fan Fail</option>
+                                    <option value="15" <?=($battery_saved_data->issue_type_3 == 15) ? 'selected' : ''?>>CBMS Power Resitor Burnt</option>
+                                    <option value="16" <?=($battery_saved_data->issue_type_3 == 16) ? 'selected' : ''?>>Old Software Version Present</option>
                                     </select>
                                 </div>
                                 <div class="label_input_container label_height_cont">
@@ -119,24 +128,27 @@
                                 <textarea name="remarks_3" class="textBox check_remark" id="remarks3" placeholder="Enter your remarks"><?=$battery_saved_data->remarks_3?></textarea>
                                 </div>
                             </div>
-                            <div class="issue_4 moreIssues" style="<?=($battery_saved_data->issue_type_2 || $battery_saved_data->remarks_2) ? 'display:block;' : 'display:none;'?>">
+                            <div class="issue_4 moreIssues" style="<?=($battery_saved_data->issue_type_4 || $battery_saved_data->remarks_4) ? 'display:block;' : 'display:none;'?>">
                                 <div class="label_input_container">
                                     <label class="label_text">Issue Type 4</label>
                                     <select name="issue_type_4" class="textBox selectBox">
-                                        <option value="0">Select</option>
-                                        <option value="1" <?=($battery_saved_data->iissue_type_4 == 1) ? 'selected' : ''?>>BMS Issue / Faulty</option>
-                                        <option value="2" <?=($battery_saved_data->issue_type_4 == 2) ? 'selected' : ''?>>Cable Harness / Hardware Issue</option>
-                                        <option value="3" <?=($battery_saved_data->issue_type_4 == 3) ? 'selected' : ''?>>Battery Terminals Loose/Broken/Corroded</option>
-                                        <option value="4" <?=($battery_saved_data->issue_type_4 == 4) ? 'selected' : ''?>>Plastic Cap loose / missing</option>
-                                        <option value="5" <?=($battery_saved_data->issue_type_4 == 5) ? 'selected' : ''?>>Battery Cell Swollen</option>
-                                        <option value="6" <?=($battery_saved_data->issue_type_4 == 6) ? 'selected' : ''?>>Battery Cell Leakage</option>
-                                        <option value="7" <?=($battery_saved_data->issue_type_4 == 7) ? 'selected' : ''?>>Cell Sleeve Damage</option>
-                                        <option value="8" <?=($battery_saved_data->issue_type_4 == 8) ? 'selected' : ''?>>Unbalanced Cell voltage (>0.5V)</option>
-                                        <option value="9" <?=($battery_saved_data->issue_type_4 == 9) ? 'selected' : ''?>>Cell Deep Discharge</option>
-                                        <option value="10" <?=($battery_saved_data->issue_type_4 == 10) ? 'selected' : ''?>>PRV faulty</option>
-                                        <option value="11" <?=($battery_saved_data->issue_type_4 == 11) ? 'selected' : ''?>>Grouping sticker missing</option>
-                                        <option value="12" <?=($battery_saved_data->issue_type_4 == 12) ? 'selected' : ''?>>Module Deep Discharge</option>
-                                        <option value="13" <?=($battery_saved_data->issue_type_4 == 13) ? 'selected' : ''?>>Module Body Rusted</option>
+                                         <option value="">Select</option>
+                                    <option value="1" <?=($battery_saved_data->issue_type_4 == 1) ? 'selected' : ''?>>Comm. Cross Connection</option>
+                                    <option value="2" <?=($battery_saved_data->issue_type_4 == 2) ? 'selected' : ''?>>PP Anderson Cntr. Crimping/Loose</option>
+                                    <option value="3" <?=($battery_saved_data->issue_type_4 == 3) ? 'selected' : ''?>>Battery Anderson Cntr. Crimping/Loose</option>
+                                    <option value="4" <?=($battery_saved_data->issue_type_4 == 4) ? 'selected' : ''?>>SMPS to CBMS Comm Fail</option>
+                                    <option value="5" <?=($battery_saved_data->issue_type_4 == 5) ? 'selected' : ''?>>Battery to CBMS Comm Fail</option>
+                                    <option value="6" <?=($battery_saved_data->issue_type_4 == 6) ? 'selected' : ''?>>CBMS Control Card Faulty</option>
+                                    <option value="7" <?=($battery_saved_data->issue_type_4 == 7) ? 'selected' : ''?>>Disconnector Card Faulty</option>
+                                    <option value="8" <?=($battery_saved_data->issue_type_4 == 8) ? 'selected' : ''?>>Web Page not Working</option>
+                                    <option value="9" <?=($battery_saved_data->issue_type_4 == 9) ? 'selected' : ''?>>Ethernet Cable Faulty</option>
+                                    <option value="10" <?=($battery_saved_data->issue_type_4 == 10) ? 'selected' : ''?>>Ribbon Cable Faulty</option>
+                                    <option value="11" <?=($battery_saved_data->issue_type_4 == 11) ? 'selected' : ''?>>CBMS Loom Cable Faulty</option>
+                                    <option value="12" <?=($battery_saved_data->issue_type_4 == 12) ? 'selected' : ''?>>Module Idle due to CBMS</option>
+                                    <option value="13" <?=($battery_saved_data->issue_type_4 == 13) ? 'selected' : ''?>>Memory Card Issue</option>
+                                    <option value="14" <?=($battery_saved_data->issue_type_4 == 14) ? 'selected' : ''?>>CBMS Fan Fail</option>
+                                    <option value="15" <?=($battery_saved_data->issue_type_4 == 15) ? 'selected' : ''?>>CBMS Power Resitor Burnt</option>
+                                    <option value="16" <?=($battery_saved_data->issue_type_4 == 16) ? 'selected' : ''?>>Old Software Version Present</option>
                                     </select>
                                 </div>
                                 <div class="label_input_container label_height_cont">

@@ -82,8 +82,8 @@ $(document).ready(function(){
                 cbms_number: {
                     required: true,
                     alphanum: true,
-                    minlength: 8,
-                    maxlength: 8
+                    minlength: 9,
+                    maxlength: 9
                 }
         },
         messages: {
