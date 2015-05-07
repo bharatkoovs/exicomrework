@@ -58,7 +58,7 @@ $(document).ready(function(){
         rules: {
                 battery_number: {
                     required: true,
-                    alphanum: true,
+                    number: true,
                     minlength: 20,
                     maxlength: 20
                 }
@@ -66,7 +66,7 @@ $(document).ready(function(){
         messages: {
                 battery_number: {
                     required: "The serial number field is required",
-                    alphanum: "Enter valid serial number",
+                    number: "Enter valid serial number",
                     minlength: "Enter valid serial number",
                     maxlength: "Enter valid serial number"
                 }
