@@ -20,6 +20,10 @@
                                 <input name="my_date" val="" type="text" id="autodate" class="autodate textBox" >
                             </div>
                             <div class="label_input_container">
+                                <label class="label_text">Time:</label>
+                                <input name="my_time" val="" type="text" id="autotime" class="autotime textBox" >
+                            </div>
+                            <div class="label_input_container">
                                 <label class="label_text">CBMS Serial no:</label>
                                 <input type="text" class="textBox" name="serial_number" value="<?=$serial_no?>">
                             </div>
@@ -41,6 +45,18 @@
                                 <label class="label_text">City:</label>
                                 <input name="city" type="text" value="<?=$battery_saved_data->city?>" id="suggest_city" class="textBox req_field" autocomplete="off">
                                 <div id="suggestions"></div>
+                            </div>
+                            <div class="label_input_container">
+                                <label class="label_text">Circle:</label>
+                                <select name="circle" class="textBox selectBox req_field">
+                                    <option value="">Select</option>
+                                    <option value="1" <?=($battery_saved_data->circle == 1) ? 'selected' : ''?>>Mumbai</option>
+                                    <option value="2" <?=($battery_saved_data->circle == 2) ? 'selected' : ''?>>Gujarat</option>
+                                    <option value="3" <?=($battery_saved_data->circle == 3) ? 'selected' : ''?>>Kolkata</option>
+                                    <option value="4" <?=($battery_saved_data->circle == 4) ? 'selected' : ''?>>Kerala</option>
+                                    <option value="5" <?=($battery_saved_data->circle == 5) ? 'selected' : ''?>>Bihar & Assam</option>
+                                    <option value="6" <?=($battery_saved_data->circle == 6) ? 'selected' : ''?>>NCR</option>
+                                </select>
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">Current Software Version:</label>
@@ -172,7 +188,11 @@
                         <div class="reworkScreen" style="display: none;">
                             <div class="label_input_container">
                                 <label class="label_text">Date:</label>
-                                <input name="date_2" type="text" id="autodate" class="autodate textBox" disabled>
+                                <input name="date_2" type="text" id="autodate2" class="autodate textBox" disabled>
+                            </div>
+                            <div class="label_input_container">
+                                <label class="label_text">Time:</label>
+                                <input name="my_time_2" val="" type="text" id="autotime2" class="autotime textBox" readonly="readonly">
                             </div>
                             <div class="label_input_container">
                                 <label class="label_text">CBMS Serial no:</label>

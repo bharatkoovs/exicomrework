@@ -86,6 +86,7 @@ class Home extends MX_Controller {
             }
             
             $date = $this->input->post("my_date", true);
+            $time = $this->input->post("my_time", true);
             $serial_no = $this->input->post("serial_number", true);
             if(empty($serial_no) || empty($date)){
                 $this->session->set_flashdata('error', 'Please enter all data carefully');
@@ -96,6 +97,7 @@ class Home extends MX_Controller {
             $site_option = $this->input->post("site_option", true);
             $site_name = $this->input->post("site_name", true);
             $city = $this->input->post("city", true);
+            $circle = $this->input->post("circle", true);
             $current_software_version = $this->input->post("current_software_version", true);
             $module_soc = $this->input->post("module_soc", true);
             $module_voltage = str_replace('v', '', strtolower($this->input->post("module_voltage", true)));
@@ -149,13 +151,14 @@ class Home extends MX_Controller {
                 $battery_details->updated_by = $user->email;
             } else
                 $battery_details->created_by = $user->email;
-            $battery_details->datecreated = $date;
+            $battery_details->datecreated = $date." ".$time;
             $battery_details->save_type = $save_type;
             $battery_details->serial_no = $serial_no;
             $battery_details->rework_type = 1;
             $battery_details->site_option = $site_option;
             $battery_details->site_name = $site_name;
             $battery_details->city = $city;
+            $battery_details->circle = $circle;
             $battery_details->current_software_version = $current_software_version;
             $battery_details->module_soc = $module_soc;
             if(!empty($module_voltage))
@@ -257,6 +260,7 @@ class Home extends MX_Controller {
             }
             
             $date = $this->input->post("my_date", true);
+            $time = $this->input->post("my_time", true);
             $serial_no = $this->input->post("serial_number", true);
             if(empty($serial_no) || empty($date)){
                 $this->session->set_flashdata('error', 'Please enter all data carefully');
@@ -268,6 +272,7 @@ class Home extends MX_Controller {
             $site_option = $this->input->post("site_option", true);
             $site_name = $this->input->post("site_name", true);
             $city = $this->input->post("city", true);
+            $circle = $this->input->post("circle", true);
             $current_software_version = $this->input->post("current_software_version", true);
            
             $issue_type_1 = $this->input->post("issue_type_1", true);
@@ -304,11 +309,12 @@ class Home extends MX_Controller {
                 $battery_details->created_by = $user->email;
             $battery_details->save_type = $save_type;
             $battery_details->rework_type = 2;
-            $battery_details->datecreated = $date;
+            $battery_details->datecreated = $date." ".$time;
             $battery_details->serial_no = $serial_no;
             $battery_details->site_option = $site_option;
             $battery_details->site_name = $site_name;
             $battery_details->city = $city;
+            $battery_details->circle = $circle;
             $battery_details->current_software_version = $current_software_version;
             
             $battery_details->issue_type_1 = $issue_type_1;
@@ -367,12 +373,13 @@ class Home extends MX_Controller {
                     $i = 0;
                     $type = '';
                     $arr_title = array();$arr_vals = array();
-                    $battery_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","current_software_version","module_soc","module_voltage","cell1","cell2","cell3","cell4","cell5","cell6","cell7","cell8","cell9","cell10","cell11","cell12","cell13","cell14","cell15","cell_temp_1","cell_temp_2","cell_temp_3","cell_temp_4","cell_temp_5","issue_type_1","remarks_1","photo_1","issue_type_2","remarks_2","photo_2","issue_type_3","remarks_3","photo_3","issue_type_4","remarks_4","photo_4","replaced_serial_no","module_repairable","module_repaired_in","cell_replaced","bms_replaced","software_updated","updated_software_version","cable_loom_replaced","module_body_parts_replaced","module_charged_up","cell_level_charger_used","rework_note","rework_module_soc","rework_module_voltage","narada_rep_present","rework_cell1","rework_cell2","rework_cell3","rework_cell4","rework_cell5","rework_cell6","rework_cell7","rework_cell8","rework_cell9","rework_cell10","rework_cell11","rework_cell12","rework_cell13","rework_cell14","rework_cell15","datecreated","dateupdated");
-                    $cbms_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","current_software_version","issue_type_1","remarks_1","issue_type_2","remarks_2","issue_type_3","remarks_3","issue_type_4","remarks_4","module_repaired_in","software_updated","updated_software_version","control_card_replaced","disconnector_card_replaced","internal_cables_replaced","external_cables_replaced","pp_connector_status","communication_status","battery_connector_status","rework_note");
+                    $battery_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","circle","current_software_version","module_soc","module_voltage","cell1","cell2","cell3","cell4","cell5","cell6","cell7","cell8","cell9","cell10","cell11","cell12","cell13","cell14","cell15","cell_temp_1","cell_temp_2","cell_temp_3","cell_temp_4","cell_temp_5","issue_type_1","remarks_1","photo_1","issue_type_2","remarks_2","photo_2","issue_type_3","remarks_3","photo_3","issue_type_4","remarks_4","photo_4","replaced_serial_no","module_repairable","module_repaired_in","cell_replaced","bms_replaced","software_updated","updated_software_version","cable_loom_replaced","module_body_parts_replaced","module_charged_up","cell_level_charger_used","rework_note","rework_module_soc","rework_module_voltage","narada_rep_present","rework_cell1","rework_cell2","rework_cell3","rework_cell4","rework_cell5","rework_cell6","rework_cell7","rework_cell8","rework_cell9","rework_cell10","rework_cell11","rework_cell12","rework_cell13","rework_cell14","rework_cell15","datecreated","dateupdated");
+                    $cbms_fields = array("id","rework_type","created_by","updated_by","serial_no","site_option","site_name","city","circle","current_software_version","issue_type_1","remarks_1","issue_type_2","remarks_2","issue_type_3","remarks_3","issue_type_4","remarks_4","module_repaired_in","software_updated","updated_software_version","control_card_replaced","disconnector_card_replaced","internal_cables_replaced","external_cables_replaced","pp_connector_status","communication_status","battery_connector_status","rework_note");
                     $site_option = array("ODC","GBM","Pre Fab Shelter","Warehouse");
                     $issue_type_1 = array("","BMS Issue / Faulty","Cable Harness / Hardware Issue","Battery Terminals Loose/Broken/Corroded","Plastic Cap loose / missing","Battery Cell Swollen","Battery Cell Leakage","Cell Sleeve Damage","Unbalanced Cell voltage (>0.5V)","Cell Deep Discharge","PRV faulty","Grouping sticker missing","Module Deep Discharge","Module Body Rusted");
                     $issue_type_2 = array("","Comm. Cross Connection","PP Anderson Cntr. Crimping/Loose","Battery Anderson Cntr. Crimping/Loose","SMPS to CBMS Comm Fail","Battery to CBMS Comm Fail","CBMS Control Card Faulty","Disconnector Card Faulty","Web Page not Working","Ethernet Cable Faulty","Ribbon Cable Faulty","CBMS Loom Cable Faulty","Module Idle due to CBMS","Memory Card Issue","CBMS Fan Fail","CBMS Power Resitor Burnt","Old Software Version Present");
                     $module_repaired_in = array("Warehouse","Site","BRC");
+                    $circle = array("", "Mumbai", "Gujarat", "Kolkata", "Kerala", "Bihar & Assam", "NCR");
                     foreach($chk_lookups as $chk_lookup){
                         if($i == 0)
                             $type = $chk_lookup->rework_type;
@@ -398,6 +405,8 @@ class Home extends MX_Controller {
                                     $value = $module_repaired_in[$value];
                                 if($key == 'serial_no')
                                     $value = "'".$value."'";
+                                if($key == 'circle')
+                                    $value = $circle[$value];
                                 if ((strpos($key,'photo') !== false) && !empty($value)) {
                                     $value = base_url().$value;
 }

@@ -106,6 +106,14 @@ $(document).ready(function(){
     var month = d.getMonth()+1;
     var day = d.getDate();
     $('.autodate').val(d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day);
+    
+    var currentdate = new Date();
+    var time = (currentdate.getHours()<10?'0':'') + currentdate.getHours() + ":"
+            + (currentdate.getMinutes()<10?'0':'') + currentdate.getMinutes() + ":"
+            + (currentdate.getSeconds()<10?'0':'') + currentdate.getSeconds();
+    $('.autotime').val(time);
+    
+    
     $('.add_more_issues').click(function(){  
         $('.moreIssues').each(function(i, n){
             if($(this).css('display') == 'none'){  
