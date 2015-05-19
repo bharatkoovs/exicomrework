@@ -38,7 +38,11 @@
                                 </select>
                             </div>
                             <div class="label_input_container">
-                                <label class="label_text">Site Name/Id:</label>
+                                <label class="label_text">Site ID:</label>
+                                <input name="site_id" type="text" value="<?=$battery_saved_data->site_id?>" class="textBox req_field">
+                            </div>
+                            <div class="label_input_container">
+                                <label class="label_text">Site Name:</label>
                                 <input name="site_name" type="text" value="<?=$battery_saved_data->site_name?>" class="textBox req_field">
                             </div>
                             <div class="label_input_container">
